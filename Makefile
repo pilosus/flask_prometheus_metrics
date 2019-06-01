@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := lint
 isort = isort -rc -w 88 flask_prometheus_metrics tests
-black = black -l 88 --target-version py37 flask_prometheus_metrics tests
+black = black -l 88 --target-version py36 flask_prometheus_metrics tests
 
 
 .PHONY: install
