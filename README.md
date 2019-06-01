@@ -85,7 +85,7 @@ The metrics exported by ``flask_prometheus_metrics`` can be scraped by
 You can download Grafana dashboard crafted specifically for the ``flask_prometheus_metrics``
 default metrics [here](https://github.com/pilosus/prometheus-client-python-app-grafana-dashboard/).
 
-[![Grafana visualisation](https://raw.githubusercontent.com/pilosus/prometheus-client-python-app-grafana-dashboard/master/docs/flask-app-2.png)
+[![Grafana visualisation](https://raw.githubusercontent.com/pilosus/prometheus-client-python-app-grafana-dashboard/master/docs/flask-app-2.png)](https://github.com/pilosus/prometheus-client-python-app-grafana-dashboard/)
 
 
 ## Testing ##
