@@ -64,5 +64,6 @@ clean:
 	rm -f .coverage
 	rm -f .coverage.*
 	rm -rf build
+	rm -rf dist
 	python setup.py clean
 
