@@ -19,7 +19,7 @@ pip install -U flask_prometheus_metrics
 You will need ``Flask`` to run examples below:
 
 ```bash
-pip install -U flask_prometheus_metrics[flask]
+pip install -U 'flask_prometheus_metrics[flask]'
 ```
 
 ## Usage ##
