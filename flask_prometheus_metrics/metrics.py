@@ -47,12 +47,17 @@ def after_request(response):
     return response
 
 
-def register_middlewares(app, app_version=None, app_config=None):
+def register_metrics(app, app_version=None, app_config=None):
     """
-    Register middlewares
+    Register metrics middlewares
 
     Use in your application factory (i.e. create_app):
     register_middlewares(app, settings["version"], settings["config"])
+
+    Flask application can register more than one before_request/after_request.
+    Beware! Before/after request callback stored internally in a dictionary.
+    Before CPython 3.6 dictionaries didn't guarantee keys order, so callbacks
+    could be executed in arbitrary order.
     """
     app.before_request(before_request)
     app.after_request(after_request)

@@ -5,6 +5,7 @@ setup(
     name='flask_prometheus_metrics',
     description='Prometheus Metrics for Flask Web App',
     long_description='Prometheus Metrics for Flask Web Application using official Prometheus Python client',
+    long_description_content_type='text/x-rst',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Framework :: Flask',
@@ -35,4 +36,10 @@ setup(
     include_package_data=True,
     packages=find_packages(exclude=['tests']),
     namespace_packages=['flask_prometheus_metrics'],
+    install_requires=[
+        'prometheus-client>=0.6.0',
+    ],
+    extras_require={
+        'flask': ['Flask>=1.0.0'],
+    }
 )

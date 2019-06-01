@@ -3,7 +3,7 @@ from prometheus_client import make_wsgi_app
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from werkzeug.serving import run_simple
 
-from flask_prometheus_metrics.metrics import register_middlewares
+from flask_prometheus_metrics.metrics import register_metrics
 
 #
 # Constants
@@ -37,9 +37,7 @@ def create_app(config):
     app = Flask(__name__)
 
     register_blueprints(app)
-    register_middlewares(
-        app, app_version=config["version"], app_config=config["config"]
-    )
+    register_metrics(app, app_version=config["version"], app_config=config["config"])
     return app
 
 
@@ -53,7 +51,7 @@ def create_dispatcher() -> DispatcherMiddleware:
     App factory for dispatcher middleware managing multiple WSGI apps
     """
     main_app = create_app(config=CONFIG)
-    return DispatcherMiddleware(main_app, {"/metrics": make_wsgi_app()})
+    return DispatcherMiddleware(main_app.wsgi_app, {"/metrics": make_wsgi_app()})
 
 
 #

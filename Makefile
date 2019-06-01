@@ -18,7 +18,7 @@ format:
 
 .PHONY: lint
 lint:
-	python setup.py check -rms
+	python setup.py check -ms
 	flake8 flask_prometheus_metrics
 	$(isort) --check-only
 	$(black) --check
@@ -28,6 +28,9 @@ lint:
 test:
 	pytest -vvs --cov=flask_prometheus_metrics tests
 	mypy flask_prometheus_metrics
+
+.PHONY: check
+check: lint test
 
 
 .PHONY: run
