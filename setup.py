@@ -35,7 +35,6 @@ setup(
     zip_safe=False,
     include_package_data=True,
     packages=find_packages(exclude=['tests']),
-    namespace_packages=['flask_prometheus_metrics'],
     install_requires=[
         'prometheus-client>=0.6.0',
     ],

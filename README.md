@@ -31,7 +31,7 @@ from flask import Flask
 from prometheus_client import make_wsgi_app
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from werkzeug.serving import run_simple
-from flask_prometheus_metrics.metrics import register_metrics
+from flask_prometheus_metrics import register_metrics
 
 app = Flask(__name__)
 
