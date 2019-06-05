@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := lint
+.DEFAULT_GOAL := check
 isort = isort -rc -w 88 flask_prometheus_metrics tests
 black = black -l 88 --target-version py36 flask_prometheus_metrics tests
 
@@ -29,8 +29,14 @@ test:
 	pytest -vvs --cov=flask_prometheus_metrics tests
 	mypy flask_prometheus_metrics
 
+
+.PHONY: safety
+safety:
+	safety check --full-report
+
+
 .PHONY: check
-check: lint test
+check: lint test safety
 
 
 .PHONY: run
