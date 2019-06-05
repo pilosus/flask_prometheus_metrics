@@ -1,11 +1,21 @@
 from setuptools import setup, find_packages
 from version import get_version
+from pathlib import Path
+
+current_dir = Path(__file__).resolve().parent
+description = 'Prometheus Metrics for Flask Web App'
+
+try:
+    history = current_dir.joinpath('CHANGELOG.md').read_text()
+    long_description = '\n\n'.join([current_dir.joinpath('README.md').read_text(), history])
+except FileNotFoundError:
+    long_description = 'Prometheus Metrics for Flask Web Application using official Prometheus Python client'
 
 setup(
     name='flask_prometheus_metrics',
-    description='Prometheus Metrics for Flask Web App',
-    long_description='Prometheus Metrics for Flask Web Application using official Prometheus Python client',
-    long_description_content_type='text/x-rst',
+    description=description,
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Framework :: Flask',

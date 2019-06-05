@@ -1,5 +1,8 @@
 ## History ##
 
+### v0.6.0 (2019-06-06) ###
+* README and CHANGELOG as long description added
+
 
 ### v0.5.0 (2019-06-06) ###
 * CHANGELOG.md added
