@@ -1,5 +1,13 @@
 ## History ##
 
+### v0.6.2 (2019-06-06) ###
+* Codeclimate integration added
+
+
+### v0.6.1 (2019-06-06) ###
+* Travis CI configuration fixed
+
+
 ### v0.6.0 (2019-06-06) ###
 * README and CHANGELOG as long description added
 
