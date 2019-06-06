@@ -1,5 +1,10 @@
 ## History ##
 
+
+### v0.7.0 (2019-06-06) ###
+* README.md adjusted to work both on GitHub and PyPi (#11)
+
+
 ### v0.6.2 (2019-06-06) ###
 * Codeclimate integration added
 
