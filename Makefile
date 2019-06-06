@@ -27,8 +27,11 @@ lint:
 .PHONY: test
 test:
 	pytest -vvs --cov=flask_prometheus_metrics tests
-	mypy flask_prometheus_metrics
 
+
+.PHONY: mypy
+mypy:
+	mypy flask_prometheus_metrics
 
 .PHONY: safety
 safety:
@@ -36,7 +39,7 @@ safety:
 
 
 .PHONY: check
-check: lint test safety
+check: lint test mypy safety
 
 
 .PHONY: run
