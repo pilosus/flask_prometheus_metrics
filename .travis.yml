@@ -1,18 +1,42 @@
-dist: xenial   # required for Python >= 3.7
+os: linux
+dist: xenial
 language: python
-
 python:
-  - "3.6"
-  - "3.7"
-  - "nightly"
+- '3.6'
+- '3.7'
+- '3.8-dev'
 
-### command to install dependencies
-install: "pip install -r requirements.txt"
+install:
+- pip install -r requirements.txt
+- make install
+- pip freeze
 
-### command to run linters and tests
 script:
-- |
-  make safety
-  make lint
-  make test
-  codecov
+- make lint
+- make mypy
+- make test
+
+after_success:
+- ls -ltha
+- bash <(curl -s https://codecov.io/bash)
+
+jobs:
+  allow_failures:
+  - python: 3.8-dev
+  include:
+  - stage: build
+    name: PyPI Build and Push
+    if: type = push AND (branch = master OR tag IS present)
+    python: 3.7
+    script:
+      - make build
+      - ls -ltha dist
+    deploy:
+      provider: pypi
+      skip_cleanup: true
+      user: pilosus
+      password:
+        secure: cdMwIx/aVR8YnjZs0aK7zYG5T52ViHbRjuevrGGDJHMnMxNwQ1HqdCwFQOoPkSmjlHnKX65tn/20nFnGGfxs9EEzLzOXyxOEF7k6bwnSdZOZKhOJBbyzdysGT1P86WkGQpjkvrZHLPyTNPEHXHyW9SLtji9w9iqz0bLsCsz2te0dREii0lN6t2s3ZO93mSt/P62uLdP1C9XlLEljN826jXVpMWaUK0P80+yJpqrw3L/HACedD69QqjmgKXr8zngIQgyv8CZKKKdZe6fYhie4SGHSnhh5+wZsc5ML9JqCzA7rl2oYqQJ65PyN47LCvCe5ynxIfRTXpKaP6BDqx845bvMP9cIolSpT1baxM8OsUYX2B2cdTPSmCgoAeWWfNp4yX+44FxQEMxRgNkP2E03aBZdBCG/IR+UhUQUS3buQsJYDYBHhjqZX7NC0h4TL8cGca3r46IwDOIzTNpQ8DZsoEcYg+hpOBrrTCJXamGektO1gt0Ts7qG0JHwXC0GwZiw5+cpZgJV+Y1dVmIe9tIyQ+69k25iLuLnfsUdDp7QRMTaDFfGYrZrEa6ni2bYZ755K87mqNoUZdeRgBavCkhtFhvndgO/81jMQkUDkuZIFkOF5H/X7ohulrgF/EVILp2PYqeEOUFdNqynXDvwJ9u5l3HBU1rjbHniEmzQY1DX2Uc0=
+      on:
+        tags: true
+        all_branches: true
