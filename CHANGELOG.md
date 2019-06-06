@@ -1,5 +1,9 @@
 ## History ##
 
+### v1.0.0 (2019-06-06) ###
+* Library is ready for production
+* Minor setup.py fixes (#12)
+
 
 ### v0.7.0 (2019-06-06) ###
 * README.md adjusted to work both on GitHub and PyPi (#11)
