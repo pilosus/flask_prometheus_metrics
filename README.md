@@ -52,8 +52,8 @@ run_simple(hostname="localhost", port=5000, application=dispatcher)
 Then go over ``http://localhost:5000/``, refresh page a few times and check your
 app's metrics at ``http://localhost:5000/metrics``.
 
-See also [example.py](flask_prometheus_metrics/example.py) for more elaborate
-example of library usage in real Flask applications.
+See also [example.py](https://github.com/pilosus/flask_prometheus_metrics/blob/master/flask_prometheus_metrics/example.py)
+for more elaborate example of library usage in real Flask applications.
 
 ## Metrics ##
 
@@ -92,5 +92,5 @@ default metrics [here](https://github.com/pilosus/prometheus-client-python-app-g
 ## Testing ##
 
 When testing Flask application with ``DispatcherMiddleware`` (see Usage example above)
-you may want to use a [little hack](tests/conftest.py#L22) in order to make
-Flask's ``test_client()`` work properly.
+you may want to use a [little hack](https://github.com/pilosus/flask_prometheus_metrics/blob/master/tests/conftest.py#L22)
+in order to make Flask's ``test_client()`` work properly.
