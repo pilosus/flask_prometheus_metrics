@@ -1,7 +1,8 @@
 ## Flask Prometheus Metrics ##
 
 [![Build Status](https://travis-ci.org/pilosus/flask_prometheus_metrics.svg?branch=master)](https://travis-ci.org/pilosus/flask_prometheus_metrics)
-[![codecov](https://codecov.io/gh/pilosus/flask_prometheus_metrics/branch/master/graph/badge.svg)](https://codecov.io/gh/pilosus/flask_prometheus_metrics)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6b414e49d4f9302fe460/test_coverage)](https://codeclimate.com/github/pilosus/flask_prometheus_metrics/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6b414e49d4f9302fe460/maintainability)](https://codeclimate.com/github/pilosus/flask_prometheus_metrics/maintainability)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 
 Prometheus metrics exporter for Flask web applications.
