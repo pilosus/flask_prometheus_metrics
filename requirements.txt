@@ -1,5 +1,5 @@
 # Prometheus Python client
-prometheus-client==0.7.1
+prometheus-client==0.8.0
 
 # Flask & Web server
 Flask==1.1.1
