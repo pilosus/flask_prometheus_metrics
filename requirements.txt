@@ -7,7 +7,7 @@ Flask==2.0.3
 # Testing
 pytest==7.1.0
 pytest-cov==3.0.0
-mypy==0.740
+mypy==0.941
 codecov==2.0.15
 safety==1.8.5
 
