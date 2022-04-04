@@ -8,7 +8,7 @@ Flask==2.1.1
 pytest==7.1.1
 pytest-cov==3.0.0
 mypy==0.942
-codecov==2.0.15
+codecov==2.1.12
 safety==1.8.5
 
 # Linters
