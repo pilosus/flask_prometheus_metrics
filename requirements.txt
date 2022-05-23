@@ -9,7 +9,7 @@ pytest==7.1.2
 pytest-cov==3.0.0
 mypy==0.950
 codecov==2.1.12
-safety==1.8.5
+safety==1.10.3
 
 # Linters
 black==19.10b0
