@@ -1,17 +1,17 @@
 # Prometheus Python client
-prometheus-client==0.7.1
+prometheus-client==0.14.1
 
 # Flask & Web server
-Flask==1.1.1
+Flask==2.1.2
 
 # Testing
-pytest==5.2.2
-pytest-cov==2.8.1
-mypy==0.740
-codecov==2.0.15
-safety==1.8.5
+pytest==7.1.2
+pytest-cov==3.0.0
+mypy==0.961
+codecov==2.1.12
+safety==2.0.0
 
 # Linters
-black==19.10b0
-flake8==3.7.9
-isort==4.3.21
+black==22.6.0
+flake8==4.0.1
+isort==5.10.1
