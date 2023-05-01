@@ -2,7 +2,7 @@
 prometheus-client==0.7.1
 
 # Flask & Web server
-Flask==1.1.1
+Flask==2.3.2
 
 # Testing
 pytest==5.2.2
